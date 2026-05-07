@@ -64,10 +64,16 @@
         /* MAIN CONTENT STYLES */
         .erp-main {
             flex: 1;
+
             display: flex;
+            flex-direction: column;
+
             justify-content: center;
             align-items: center;
-            padding: 10px 0;
+
+            padding: 40px 20px;
+
+            gap: 24px;
         }
 
         .erp-card {
@@ -245,4 +251,61 @@
             .erp-footer-copy {
                 font-size: 9px;
             }
+        }
+
+        .erp-action {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .erp-download-btn {
+            border: none;
+            outline: none;
+
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 14px 28px;
+
+            border-radius: 14px;
+
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+
+            color: white;
+
+            background:
+                linear-gradient(135deg,
+                    #0ea5e9,
+                    #2563eb);
+
+            box-shadow:
+                0 8px 20px rgba(37, 99, 235, 0.22);
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                filter 0.2s ease;
+        }
+
+        .erp-download-btn:hover {
+            transform: translateY(-2px);
+
+            filter: brightness(1.03);
+
+            box-shadow:
+                0 12px 24px rgba(37, 99, 235, 0.28);
+        }
+
+        .erp-download-btn:active {
+            transform: scale(0.98);
+        }
+
+        .erp-download-btn span {
+            font-size: 16px;
         }

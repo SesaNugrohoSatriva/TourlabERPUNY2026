@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Identity Card - Tourlab ERP 2026</title>
-    <link rel="stylesheet" href="style.css"></link>
+    <link rel="stylesheet" href="style.css">
+    </link>
 </head>
 
 <body>
@@ -33,7 +34,7 @@
                 <div class="erp-photo-wrapper">
                     <div class="erp-photo-frame">
                         <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Foto Peserta"
-                            class="erp-photo-img">
+                            id="participantFoto" class="erp-photo-img">
                     </div>
                 </div>
             </div>
@@ -45,20 +46,26 @@
                 <div class="erp-info-container">
                     <div class="erp-info-group">
                         <label class="erp-info-label">Nama Lengkap</label>
-                        <div class="erp-info-data">[NAMA KAMU]</div>
+                        <div class="erp-info-data" id="participantNama">[NAMA KAMU]</div>
                     </div>
 
                     <div class="erp-info-group">
                         <label class="erp-info-label">NIM</label>
-                        <div class="erp-info-data">[NIM KAMU]</div>
+                        <div class="erp-info-data" id="participantNim">[NIM KAMU]</div>
                     </div>
 
                     <div class="erp-info-group">
                         <label class="erp-info-label">Kelas</label>
-                        <div class="erp-info-data erp-no-border">[KELAS KAMU]</div>
+                        <div class="erp-info-data erp-no-border" id="participantKelas">[KELAS KAMU]</div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="erp-action">
+            <button id="downloadPdfBtn" class="erp-download-btn">
+                <span>⬇</span>
+                Download PDF
+            </button>
         </div>
     </main>
 
@@ -70,6 +77,8 @@
             Copyright &copy; 2026 Laboratorium ERP Teknik Industri UNY. All Rights Reserved.
         </p>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
 
 </body>
 

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tourlab ERP 2026</title>
+
+    <link rel="stylesheet" href="print.css">
+</head>
+
+<body>
+
+    <div class="certificate">
+
+        <div class="certificate-border">
+
+            <!-- HEADER -->
+            <div class="certificate-header">
+
+                <img src="assets/Logo ERP.jpeg" alt="Logo ERP" class="cert-logo">
+
+                <h1 class="certificate-title">
+                    TOUR LAB ERP 2026
+                </h1>
+
+                <p class="certificate-subtitle">
+                    Challenge Appreciation
+                </p>
+
+            </div>
+
+            <!-- CONTENT -->
+            <div class="certificate-body">
+
+                <!-- LEFT -->
+                <div class="certificate-left">
+
+                    <p class="cert-text">
+                        Congratulations to
+                    </p>
+
+                    <h2 class="participant-name" id="printNama">
+                        NAMA PESERTA
+                    </h2>
+
+                    <p class="cert-description">
+                        Successfully completed the Tour Lab ERP challenge
+                        and demonstrated enthusiasm in exploring
+                        Enterprise Resource Planning concepts.
+                    </p>
+
+                </div>
+
+                <!-- RIGHT -->
+                <div class="certificate-right">
+
+                    <div class="preview-card">
+
+                        <div class="preview-banner"></div>
+
+                        <div class="preview-photo-wrapper">
+
+                            <img id="printFoto" src="https://www.w3schools.com/howto/img_avatar.png" alt="Foto Peserta"
+                                class="preview-photo">
+
+                        </div>
+
+                        <div class="preview-content">
+
+                            <div class="preview-role">
+                                PESERTA TOURLAB
+                            </div>
+
+                            <div class="preview-batch">
+                                BATCH 2026
+                            </div>
+
+                            <div class="preview-info">
+
+                                <div class="preview-item">
+                                    <span>Nama</span>
+
+                                    <strong id="printNamaCard">
+                                        -
+                                    </strong>
+                                </div>
+
+                                <div class="preview-item">
+                                    <span>NIM</span>
+
+                                    <strong id="printNim">
+                                        -
+                                    </strong>
+                                </div>
+
+                                <div class="preview-item">
+                                    <span>Kelas</span>
+
+                                    <strong id="printKelas">
+                                        -
+                                    </strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FOOTER -->
+            <div class="certificate-footer">
+
+                <p>
+                    2026 • Laboratorium ERP Teknik Industri UNY
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+
+        // ambil data
+        const nama = localStorage.getItem("participant_nama");
+        const nim = localStorage.getItem("participant_nim");
+        const kelas = localStorage.getItem("participant_kelas");
+        const foto = localStorage.getItem("participant_foto");
+
+        // inject
+        document.getElementById("printNama").innerText =
+            nama || "NAMA PESERTA";
+
+        document.getElementById("printNamaCard").innerText =
+            nama || "-";
+
+        document.getElementById("printNim").innerText =
+            nim || "-";
+
+        document.getElementById("printKelas").innerText =
+            kelas || "-";
+
+        document.getElementById("printFoto").src =
+            foto || "assets/default.png";
+
+        // auto generate pdf
+        window.onload = () => {
+
+            const element =
+                document.querySelector(".certificate");
+
+            const opt = {
+
+                margin: 0,
+
+                filename: 'sertif-challenge.pdf',
+
+                image: {
+                    type: 'jpeg',
+                    quality: 1
+                },
+
+                html2canvas: {
+                    scale: 4,
+                    useCORS: true
+                },
+
+                jsPDF: {
+                    unit: 'mm',
+                    format: 'a4',
+                    orientation: 'landscape'
+                }
+
+            };
+
+            setTimeout(() => {
+
+                html2pdf()
+                    .set(opt)
+                    .from(element)
+                    .save()
+                    .then(() => {
+
+                        window.close();
+
+                    });
+
+            }, 500);
+
+        };
+
+    </script>
+
+</body>
+
+</html>

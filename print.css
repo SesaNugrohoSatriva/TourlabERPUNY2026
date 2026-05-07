@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #dbe2ea;
+    font-family: 'Segoe UI', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* CONTAINER */
+.certificate {
+    width: 1123px;
+    height: 794px;
+
+    background: white;
+
+    padding: 16px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.10);
+}
+
+/* BORDER */
+.certificate-border {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    overflow: hidden;
+
+    border: 5px solid #2563eb;
+
+    padding: 34px 48px;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        linear-gradient(135deg,
+            rgba(37, 99, 235, 0.025),
+            rgba(14, 165, 233, 0.008));
+}
+
+/* DECORATION */
+.certificate-border::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    background: rgba(37, 99, 235, 0.035);
+
+    top: -140px;
+    right: -120px;
+}
+
+.certificate-border::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: rgba(14, 165, 233, 0.03);
+
+    bottom: -120px;
+    left: -120px;
+}
+
+/* HEADER */
+.certificate-header {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.cert-logo {
+    width: 52px;
+    margin-bottom: 10px;
+}
+
+.certificate-title {
+    font-size: 34px;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    color: #0f172a;
+}
+
+.certificate-subtitle {
+    margin-top: 6px;
+
+    font-size: 16px;
+    color: #64748b;
+}
+
+/* BODY */
+.certificate-body {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    margin-top: 10px;
+
+    position: relative;
+    z-index: 2;
+}
+
+/* LEFT */
+.certificate-left {
+    flex: 1;
+
+    padding-left: 8px;
+}
+
+.cert-text {
+    font-size: 18px;
+    color: #64748b;
+}
+
+.participant-name {
+    margin-top: 12px;
+    margin-bottom: 18px;
+
+    font-size: 72px;
+    line-height: 0.95;
+    font-weight: 900;
+
+    color: #2563eb;
+
+    text-shadow:
+        0 4px 10px rgba(37, 99, 235, 0.12);
+}
+
+.cert-description {
+    font-size: 18px;
+    line-height: 1.9;
+
+    color: #475569;
+
+    max-width: 520px;
+}
+
+/* RIGHT */
+.certificate-right {
+    width: 360px;
+
+    display: flex;
+    justify-content: center;
+}
+
+/* CARD */
+.preview-card {
+    width: 300px;
+
+    background:
+        rgba(255, 255, 255, 0.96);
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    border: 1px solid #dbeafe;
+
+    box-shadow:
+        0 20px 40px rgba(37, 99, 235, 0.08),
+        0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.preview-banner {
+    height: 95px;
+
+    background:
+        linear-gradient(135deg,
+            #0ea5e9,
+            #2563eb);
+}
+
+.preview-photo-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.preview-photo {
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    margin-top: -46px;
+
+    border: 5px solid white;
+
+    background: white;
+}
+
+.preview-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.preview-role {
+    font-size: 19px;
+    font-weight: 900;
+
+    color: #0f172a;
+}
+
+.preview-batch {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 5px 12px;
+
+    border-radius: 999px;
+
+    background: #e0f2fe;
+
+    color: #0369a1;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.preview-info {
+    margin-top: 22px;
+    text-align: left;
+}
+
+.preview-item {
+    margin-bottom: 14px;
+}
+
+.preview-item span {
+    display: block;
+
+    font-size: 10px;
+
+    color: #94a3b8;
+
+    margin-bottom: 4px;
+}
+
+.preview-item strong {
+    font-size: 14px;
+    color: #0f172a;
+}
+
+/* FOOTER */
+.certificate-footer {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    margin-top: 8px;
+
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* PAGE */
+@page {
+    size: A4 landscape;
+    margin: 0;
+}
+
+/* PRINT */
+@media print {
+
+    html,
+    body {
+        width: 297mm;
+        height: 210mm;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow: hidden;
+
+        background: white;
+    }
+
+    body {
+        display: block;
+    }
+
+    .certificate {
+        width: 297mm;
+        height: 210mm;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-shadow: none !important;
+    }
+
+    .certificate-border {
+        width: 100%;
+        height: 100%;
+
+        border: 5px solid #2563eb;
+    }
+}
